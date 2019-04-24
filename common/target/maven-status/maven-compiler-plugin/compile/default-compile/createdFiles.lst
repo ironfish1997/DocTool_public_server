@@ -1,0 +1,8 @@
+enums/StatusEnum.class
+model/Contacts.class
+exception/ResidentOperationException.class
+exception/SpecialPatientOperationException.class
+model/TreatmentRow.class
+model/User.class
+model/Resident.class
+model/Patient.class
