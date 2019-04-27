@@ -1,11 +1,11 @@
-package top.liuliyong.service;
+package top.liuliyong.publicservice.service;
 
-import enums.StatusEnum;
-import exception.SpecialPatientOperationException;
-import model.Patient;
-import model.TreatmentRow;
+import top.liuliyong.publicservice.common.enums.StatusEnum;
+import top.liuliyong.publicservice.common.exception.SpecialPatientOperationException;
+import top.liuliyong.publicservice.common.model.Patient;
+import top.liuliyong.publicservice.common.model.TreatmentRow;
 import org.springframework.stereotype.Service;
-import top.liuliyong.repository.SpecialPatientRepository;
+import top.liuliyong.publicservice.repository.repositoryImpl.SpecialPatientRepository;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,11 +1,11 @@
-package top.liuliyong.service;
+package top.liuliyong.publicservice.service;
 
-import enums.StatusEnum;
-import exception.ResidentOperationException;
-import model.Resident;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import top.liuliyong.repository.ResidentRepository;
+import top.liuliyong.publicservice.common.enums.StatusEnum;
+import top.liuliyong.publicservice.common.exception.ResidentOperationException;
+import top.liuliyong.publicservice.common.model.Resident;
+import top.liuliyong.publicservice.repository.repositoryImpl.ResidentRepository;
 
 import java.util.List;
 
