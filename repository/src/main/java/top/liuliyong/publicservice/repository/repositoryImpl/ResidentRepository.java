@@ -1,4 +1,4 @@
-package top.liuliyong.publicservice.repositoryImpl;
+package top.liuliyong.publicservice.repository.repositoryImpl;
 
 import top.liuliyong.publicservice.common.model.Resident;
 import org.springframework.data.mongodb.core.MongoOperations;

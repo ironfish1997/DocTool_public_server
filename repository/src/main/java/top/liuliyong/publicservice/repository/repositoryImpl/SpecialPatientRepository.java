@@ -1,12 +1,12 @@
-package top.liuliyong.publicservice.repositoryImpl;
+package top.liuliyong.publicservice.repository.repositoryImpl;
 
 import top.liuliyong.publicservice.common.model.Patient;
 import top.liuliyong.publicservice.common.model.TreatmentRow;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.stereotype.Repository;
-import top.liuliyong.publicservice.util.JedisUtil;
-import top.liuliyong.publicservice.util.TimeUtil;
+import top.liuliyong.publicservice.repository.util.JedisUtil;
+import top.liuliyong.publicservice.repository.util.TimeUtil;
 
 import java.util.ArrayList;
 import java.util.List;

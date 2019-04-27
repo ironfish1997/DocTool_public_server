@@ -1,10 +1,10 @@
-package top.liuliyong.publicservice.config;
+package top.liuliyong.publicservice.repository.config;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
-import top.liuliyong.publicservice.util.JedisUtil;
+import top.liuliyong.publicservice.repository.util.JedisUtil;
 
 /**
  * Jedis配置Bean

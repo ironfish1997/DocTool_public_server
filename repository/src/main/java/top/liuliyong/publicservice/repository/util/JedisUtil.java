@@ -1,4 +1,4 @@
-package top.liuliyong.publicservice.util;
+package top.liuliyong.publicservice.repository.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
