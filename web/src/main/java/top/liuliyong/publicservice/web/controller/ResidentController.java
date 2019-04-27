@@ -1,16 +1,17 @@
-package top.liuliyong.controller;
+package top.liuliyong.publicservice.web.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import model.Resident;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import top.liuliyong.response.PublicResponse;
-import top.liuliyong.service.ResidentService;
+import top.liuliyong.publicservice.common.model.Resident;
+import top.liuliyong.publicservice.service.ResidentService;
+import top.liuliyong.publicservice.web.response.PublicResponse;
 
 import java.util.List;
 
@@ -24,11 +25,9 @@ import java.util.List;
 @Api(value = "Resident", description = "辖区居民服务")
 public class ResidentController {
     private static final Logger logger = LoggerFactory.getLogger(ResidentController.class);
-    private final ResidentService residentService;
+    @Autowired
+    private ResidentService residentService;
 
-    public ResidentController(ResidentService residentService) {
-        this.residentService = residentService;
-    }
 
     @GetMapping("/findAllResidents")
     @ApiOperation(value = "查找辖区内所有居民信息")

@@ -1,14 +1,14 @@
-package top.liuliyong.controller;
+package top.liuliyong.publicservice.web.controller;
 
 import com.alibaba.fastjson.JSON;
-import exception.ResidentOperationException;
-import exception.SpecialPatientOperationException;
+import top.liuliyong.publicservice.common.exception.ResidentOperationException;
+import top.liuliyong.publicservice.common.exception.SpecialPatientOperationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
-import top.liuliyong.response.PublicResponse;
+import top.liuliyong.publicservice.web.response.PublicResponse;
 
 import javax.servlet.http.HttpServletResponse;
 

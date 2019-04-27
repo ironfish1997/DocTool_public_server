@@ -1,15 +1,15 @@
-package top.liuliyong.controller;
+package top.liuliyong.publicservice.web.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import model.Patient;
-import model.TreatmentRow;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import top.liuliyong.response.PublicResponse;
-import top.liuliyong.service.SpecialPatientService;
+import top.liuliyong.publicservice.common.model.Patient;
+import top.liuliyong.publicservice.common.model.TreatmentRow;
+import top.liuliyong.publicservice.service.SpecialPatientService;
+import top.liuliyong.publicservice.web.response.PublicResponse;
 
 import java.util.List;
 

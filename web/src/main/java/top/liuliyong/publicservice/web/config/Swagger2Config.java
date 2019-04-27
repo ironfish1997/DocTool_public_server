@@ -1,4 +1,4 @@
-package top.liuliyong.config;
+package top.liuliyong.publicservice.web.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -3,12 +3,26 @@ logging:
 spring:
   data:
     mongodb:
-      uri: mongodb://DocTool:123456@localhost:27019/DocTool
+      uri: mongodb://DocTool:123456@localhost:27017/DocTool
   application:
-    name: public-server
+    name: publicservice-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 server:
   tomcat:
     uri-encoding: utf-8
+#定时任务线程池配置
+schedule:
+  threadpool:
+    corePoolSize: 10
+    maxPoolSize: 200
+    queueCapacity: 10
+websocket:
+  MaxTextMessageBufferSize: 8192
+  MaxBinaryMessageBufferSize: 8192
 redis:
   address: redis://myRedis:123456@127.0.0.1:6379
 eureka:

@@ -1,0 +1,24 @@
+{
+  "properties": [
+    {
+      "name": "schedule.threadpool.corePoolSize",
+      "type": "java.lang.String",
+      "description": "."
+    },
+    {
+      "name": "schedule.threadpool.maxPoolSize",
+      "type": "java.lang.String",
+      "description": "Description for schedule.threadpool.maxPoolSize."
+    },
+    {
+      "name": "schedule.threadpool.queueCapacity",
+      "type": "java.lang.String",
+      "description": "Description for schedule.threadpool.queueCapacity."
+    },
+    {
+      "name": "redis.address",
+      "type": "java.lang.String",
+      "description": "Description for redis.address."
+    }
+  ]
+}

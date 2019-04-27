@@ -1,6 +1,6 @@
-package top.liuliyong.response;
+package top.liuliyong.publicservice.web.response;
 
-import enums.StatusEnum;
+import top.liuliyong.publicservice.common.enums.StatusEnum;
 import lombok.Data;
 
 /**
