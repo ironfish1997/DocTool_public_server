@@ -1,10 +1,10 @@
 package top.liuliyong.publicservice.service;
 
+import org.springframework.stereotype.Service;
 import top.liuliyong.publicservice.common.enums.StatusEnum;
 import top.liuliyong.publicservice.common.exception.SpecialPatientOperationException;
 import top.liuliyong.publicservice.common.model.Patient;
 import top.liuliyong.publicservice.common.model.TreatmentRow;
-import org.springframework.stereotype.Service;
 import top.liuliyong.publicservice.repository.repositoryImpl.SpecialPatientRepository;
 
 import java.util.ArrayList;
@@ -29,8 +29,8 @@ public class SpecialPatientService {
         return specialPatientRepository.findSpecialPatients(area);
     }
 
-    public Patient checkedSpecialPatient(String patient_id) {
-        if (patient_id == null || patient_id.trim().length() == 0) {
+    public Patient checkedSpecialPatient(String patient_id_number) {
+        if (patient_id_number == null || patient_id_number.trim().length() == 0) {
             throw new SpecialPatientOperationException(StatusEnum.LACK_OF_INFORMATION);
         }
         //1.从redis里获取全部未复查的对象
@@ -38,7 +38,7 @@ public class SpecialPatientService {
         Patient targetPatient = null;
         //2.循环找到patient_id对应的对象，从redis里删除
         for (Patient patient : patientsInRedis) {
-            if (patient.getId_number().equals(patient_id)) {
+            if (patient.getId_number().equals(patient_id_number)) {
                 targetPatient = specialPatientRepository.deleteSpecialPatientFromRedis(patient);
             }
         }
@@ -105,5 +105,15 @@ public class SpecialPatientService {
             throw new SpecialPatientOperationException(StatusEnum.LACK_OF_INFORMATION);
         }
         return specialPatientRepository.putSpecialPatientToRedis(patient);
+    }
+
+    /**
+     * 通过患者身份证号查找所有复查记录
+     */
+    public List<TreatmentRow> getReviewRecord(String idNumber) {
+        if (idNumber == null || idNumber.trim().length() == 0) {
+            throw new SpecialPatientOperationException(StatusEnum.LACK_OF_INFORMATION);
+        }
+        return specialPatientRepository.findSpecialTreatRowByPatientIdNumber(idNumber);
     }
 }
