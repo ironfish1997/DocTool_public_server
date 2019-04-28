@@ -46,11 +46,11 @@ public class MyHandshakeHandler extends DefaultHandshakeHandler {
             String session_id = path.split("session_id=")[1];
             session_id = session_id.split("/")[0];
             if (session_id != null && session_id.length() > 0) {
-                System.out.println(">>>>>> 当前session_id=" + session_id);
+                logger.info(">>>>>> 当前session_id=" + session_id);
                 if (attributes.get("account") != null) {
                     logger.info(">>>>>> 上传到连接map");
                     Account resultAcc = JSON.parseObject(JSON.toJSONString(attributes.get("account")), Account.class);
-                    return new MyPrincipal(resultAcc.getAccount_id());
+                    return new MyPrincipal(resultAcc.getArea());
                 }
                 ServletServerHttpRequest serverHttpRequest = (ServletServerHttpRequest) request;
                 HttpSession session = serverHttpRequest.getServletRequest().getSession();
@@ -59,7 +59,7 @@ public class MyHandshakeHandler extends DefaultHandshakeHandler {
                     attributes.put("account", accountCheckResult.getData());
                     Account resultAcc = JSON.parseObject(JSON.toJSONString(accountCheckResult.getData()), Account.class);
                     logger.info(">>>>>> 上传到连接map");
-                    return new MyPrincipal(resultAcc.getAccount_id());
+                    return new MyPrincipal(resultAcc.getArea());
                 }
             }
         }

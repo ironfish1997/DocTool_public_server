@@ -38,15 +38,15 @@ public class SpecialPatientController {
 
     @PostMapping("/checkedSpecialPatient")
     @ApiOperation(value = "标记患者本月已复查")
-    @ApiImplicitParams({@ApiImplicitParam(name = "patient_id", value = "患者id", required = true, dataType = "String"),})
-    public PublicResponse checkedSpecialPatient(@RequestParam("patient_id") String patient_id) {
-        Patient result = specialPatientService.checkedSpecialPatient(patient_id);
+    @ApiImplicitParams({@ApiImplicitParam(name = "patient_id_number", value = "患者身份证号", required = true, dataType = "String"),})
+    public PublicResponse checkedSpecialPatient(@RequestParam("patient_id_number") String patient_id_number) {
+        Patient result = specialPatientService.checkedSpecialPatient(patient_id_number);
         return new PublicResponse(0, "ok", result);
     }
 
     @PostMapping("/saveReviewRecord")
     @ApiOperation(value = "保存复查记录")
-    @ApiImplicitParams({@ApiImplicitParam(name = "treatment", value = "就诊记录实体", required = true, dataType = "TreatmentRow"),})
+    @ApiImplicitParams({@ApiImplicitParam(name = "TreatmentRow", value = "就诊记录实体", required = true, dataType = "TreatmentRow"),})
     public PublicResponse saveReviewRecord(@RequestBody TreatmentRow treatment) {
         TreatmentRow result = specialPatientService.saveReviewRecord(treatment);
         return new PublicResponse(0, "ok", result);
@@ -73,6 +73,14 @@ public class SpecialPatientController {
     @ApiImplicitParams({@ApiImplicitParam(name = "patient", value = "病人信息", required = true, dataType = "Patient")})
     public PublicResponse addUnreviewSpecialPatient(@RequestBody Patient patient) {
         Patient result = specialPatientService.addSpecialPatientsToRedis(patient);
+        return new PublicResponse(0, "ok", result);
+    }
+
+    @GetMapping("/getReviewRecord")
+    @ApiOperation(value = "获取患者的所有复查记录")
+    @ApiImplicitParams({@ApiImplicitParam(name = "id_number", value = "病人身份证号", required = true, dataType = "string")})
+    public PublicResponse getReviewRecord(@RequestParam("id_number") String idNumber) {
+        List<TreatmentRow> result = specialPatientService.getReviewRecord(idNumber);
         return new PublicResponse(0, "ok", result);
     }
 }

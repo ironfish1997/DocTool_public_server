@@ -6,7 +6,6 @@ import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import top.liuliyong.publicservice.common.model.Resident;
@@ -25,8 +24,11 @@ import java.util.List;
 @Api(value = "Resident", description = "辖区居民服务")
 public class ResidentController {
     private static final Logger logger = LoggerFactory.getLogger(ResidentController.class);
-    @Autowired
-    private ResidentService residentService;
+    private final ResidentService residentService;
+
+    public ResidentController(ResidentService residentService) {
+        this.residentService = residentService;
+    }
 
 
     @GetMapping("/findAllResidents")
