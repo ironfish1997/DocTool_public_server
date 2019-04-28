@@ -410,4 +410,10 @@ public class JedisUtil {
         }
         return result;
     }
+
+    public static void main(String[] args){
+        init("redis://myRedis:123456@127.0.0.1:6379");
+        delSerialized("stomp-websocket");
+    }
+
 }
