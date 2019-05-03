@@ -1,8 +1,8 @@
 package top.liuliyong.publicservice.repository.repositoryImpl;
 
-import top.liuliyong.publicservice.common.model.Resident;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.stereotype.Repository;
+import top.liuliyong.publicservice.common.model.Resident;
 
 import java.util.List;
 
