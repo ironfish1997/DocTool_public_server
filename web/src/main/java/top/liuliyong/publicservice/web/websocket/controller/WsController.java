@@ -7,8 +7,6 @@ import org.springframework.amqp.rabbit.annotation.Exchange;
 import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.QueueBinding;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.messaging.simp.user.SimpUser;
 import org.springframework.messaging.simp.user.SimpUserRegistry;
@@ -19,7 +17,6 @@ import top.liuliyong.publicservice.common.model.MQMessageObject;
 import top.liuliyong.publicservice.repository.util.JedisUtil;
 import top.liuliyong.publicservice.web.model.WebSocketResponseMessage;
 import top.liuliyong.publicservice.web.websocket.common.Constants;
-import top.liuliyong.publicservice.web.websocket.common.Message;
 
 import java.util.List;
 import java.util.Set;
@@ -123,11 +120,11 @@ public class WsController {
         }
     }
 
-    @MessageMapping(value = "/sendMessage")
-    public void sendMessage(SimpMessageHeaderAccessor sha, Message params) {
-        log.info("sendMessage: {}", params);
-        String session_id = sha.getSessionId();
-        messagingTemplate.convertAndSendToUser("china,hunan,changde,lixian", "/topic/tempNotifications", params);
-    }
+//    @MessageMapping(value = "/sendMessage")
+//    public void sendMessage(SimpMessageHeaderAccessor sha, Message params) {
+//        log.info("sendMessage: {}", params);
+//        String session_id = sha.getSessionId();
+//        messagingTemplate.convertAndSendToUser("china,hunan,changde,lixian", "/topic/tempNotifications", params);
+//    }
 
 }

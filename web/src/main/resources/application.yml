@@ -3,11 +3,11 @@ logging:
 spring:
   data:
     mongodb:
-      uri: mongodb://DocTool:123456@localhost:27017/DocTool
+      uri: mongodb://DocTool:123456@120.79.79.151:27017/DocTool?maxPoolSize=50&connectTimeoutMS=30000&socketTimeoutMS=3000
   application:
     name: publicservice-server
   rabbitmq:
-    host: localhost
+    host: 120.79.79.151
     port: 5672
     username: guest
     password: guest
@@ -24,7 +24,7 @@ websocket:
   MaxTextMessageBufferSize: 8192
   MaxBinaryMessageBufferSize: 8192
 redis:
-  address: redis://myRedis:123456@127.0.0.1:6379
+  address: redis://myRedis:123456@120.79.79.151:6379
 eureka:
   client:
     service-url:
