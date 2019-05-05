@@ -34,8 +34,8 @@ public class ScheduleTaskService {
     /**
      * 将mongo内所有特殊病症病人推送到redis里，3月，6月，9月，12月1日执行
      */
-//    @Scheduled(cron = "0 0 0 1 3,6,9,12 ?")
-    @Scheduled(cron = "10 * * * * ?")
+    @Scheduled(cron = "0 0 0 1 3,6,9,12 ?")
+//    @Scheduled(cron = "10 * * * * ?")
     public void putUnreviewPatientsToRedis() {
         try {
             logger.info(">>>>>>推送特殊病症病人到redis任务启动");
@@ -61,8 +61,8 @@ public class ScheduleTaskService {
      * 3月，6月，9月，12月20号如果还有未复查的高血压，糖尿病患者，则短信通知医生。
      * 本来应该是用短信通知，但是短信需要营业执照，故先用消息来代替
      */
-    @Scheduled(cron = "1 * * * * ?")
-//    @Scheduled(cron = "* * * 20 3,6,9,12 ?")
+//    @Scheduled(cron = "1 * * * * ?")
+    @Scheduled(cron = "* * * 20 3,6,9,12 ?")
     public void sendUnreviewSpecialPatientsListNotificationToFront() {
         try {
             List<Patient> currentUnreviewPetients = specialPatientRepository.getAllUnreviewPatientsFromRedis();
