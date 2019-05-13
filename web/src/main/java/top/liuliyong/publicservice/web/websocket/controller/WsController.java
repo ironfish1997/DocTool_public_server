@@ -12,6 +12,7 @@ import org.springframework.messaging.simp.user.SimpUser;
 import org.springframework.messaging.simp.user.SimpUserRegistry;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 import top.liuliyong.publicservice.common.model.MQMessageObject;
 import top.liuliyong.publicservice.repository.util.JedisUtil;
@@ -29,6 +30,7 @@ import java.util.Set;
 @Slf4j
 @Api(value = "websocketController", description = "websocket相关服务")
 @Validated
+@CrossOrigin
 public class WsController {
 
     private final SimpMessagingTemplate messagingTemplate;

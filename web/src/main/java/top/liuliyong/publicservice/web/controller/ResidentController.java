@@ -22,6 +22,7 @@ import java.util.List;
 @RequestMapping(path = "/resident")
 @Validated
 @Api(value = "Resident", description = "辖区居民服务")
+@CrossOrigin
 public class ResidentController {
     private static final Logger logger = LoggerFactory.getLogger(ResidentController.class);
     private final ResidentService residentService;

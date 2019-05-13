@@ -1,5 +1,6 @@
 package top.liuliyong.publicservice.common.exception;
 
+import lombok.EqualsAndHashCode;
 import top.liuliyong.publicservice.common.enums.StatusEnum;
 import lombok.Data;
 
@@ -7,6 +8,7 @@ import lombok.Data;
  * @Author liyong.liu
  * @Date 2019-04-22
  **/
+@EqualsAndHashCode(callSuper = false)
 @Data
 public class SpecialPatientOperationException extends RuntimeException {
 

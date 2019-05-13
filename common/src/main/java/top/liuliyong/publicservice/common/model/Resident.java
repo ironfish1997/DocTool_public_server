@@ -13,8 +13,9 @@ import java.util.Objects;
  **/
 
 @Document(collection = "patients")
-@Data
+//@EqualsAndHashCode(callSuper = false)
 @Component
+@Data
 public class Resident extends User {
     public Resident(String id, String id_number, String name, String area, Contacts contacts, Object extra_meta) {
         super(id, name, area, contacts, extra_meta);

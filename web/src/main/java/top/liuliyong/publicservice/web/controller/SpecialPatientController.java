@@ -21,6 +21,7 @@ import java.util.List;
 @Api(value = "SpecialPatient", description = "特殊病患服务")
 @RequestMapping(path = "/specialPatient")
 @Validated
+@CrossOrigin
 public class SpecialPatientController {
     private final SpecialPatientService specialPatientService;
 
